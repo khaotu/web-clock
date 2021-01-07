@@ -9,18 +9,17 @@
         :rules="rules"
       >
         <el-form-item label="User" prop="user">
-          {{ user }}
           <el-select
-            v-model="user"
+            v-model="template.user"
             placeholder="Select"
             size="large"
             style="min-width: 500px"
           >
             <el-option
-              v-for="user in users"
-              :key="user.user.id"
-              :label="`${user.user.firstName} ${user.user.lastName}`"
-              :value="user"
+              v-for="(name, no) in users"
+              :key="no"
+              :label="`${name.user.firstName} ${name.user.lastName}`"
+              :value="name.id"
             >
             </el-option>
           </el-select>
@@ -60,8 +59,7 @@ export default {
   data () {
     return {
       template: {
-        userId: '',
-        user: {},
+        user: '',
         date: '',
         hours: '',
         comment: ''
@@ -90,17 +88,6 @@ export default {
   computed: {
     users () {
       return [...this.$store.state.users]
-    },
-    user: {
-      get () {
-        if (Object.keys(this.template.user).length !== 0) {
-          return `${this.template.user.firstName} ${this.template.user.lastName}`
-        } else return ''
-      },
-      set (value) {
-        this.template.user = { ...value.user }
-        this.template.userId = value.id
-      }
     }
   },
   methods: {
@@ -114,7 +101,7 @@ export default {
             date: this.template.date.toISOString().slice(0, 10)
           }
           this.$store.dispatch('updateTarkByUser', {
-            userId: this.template.userId,
+            userId: this.template.user,
             tark: tark
           })
           alert('submit!')

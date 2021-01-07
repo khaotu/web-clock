@@ -1,5 +1,5 @@
 <template>
-  <el-container>
+  <el-container style="display:flex; justify-content:center;">
     <el-row>
       <el-col :span="24">
         <el-card>
