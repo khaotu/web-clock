@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Clock from '@/components/Clock'
 import Traker from '@/components/Traker'
 import Home from '@/components/Home'
 import Entries from '@/components/Entries'
@@ -16,16 +15,6 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
-    },
-    {
-      path: '/clock',
-      name: 'Clock',
-      component: Clock
-    },
-    {
-      path: '/traker',
-      name: 'Traker',
-      component: Traker
     },
     {
       path: '/time-entries',

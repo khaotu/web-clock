@@ -22,15 +22,6 @@ export default new Vuex.Store({
             date: '2016-04-08'
           }
         ]
-      },
-      {
-        id: 'gf34sezvoh6',
-        user: {
-          firstName: 'Peta',
-          lastName: 'Rangprasert',
-          image: 'https://1.gravatar.com/avatar/7f4ec37467f2f7db6fffc7b4d2cc8dc2?s=250'
-        },
-        tarks: []
       }
     ]
   },
